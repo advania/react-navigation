@@ -129,6 +129,7 @@ export default class DrawerView<T: *> extends PureComponent<void, Props, void> {
       contentComponent={this.props.contentComponent}
       contentOptions={this.props.contentOptions}
       style={this.props.style}
+      drawerCloseRoute={this.props.drawerCloseRoute}
     />;
 
   _drawer: any;
