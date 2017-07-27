@@ -33,6 +33,7 @@ type Props = {
   contentOptions?: {},
   screenProps?: {},
   style?: ViewStyleProp,
+  drawerCloseRoute: string,
 };
 
 /**
@@ -43,7 +44,7 @@ class DrawerSidebar extends PureComponent<void, Props, void> {
 
   _getScreenOptions = (routeKey: string) => {
     const DrawerScreen = this.props.router.getComponentForRouteName(
-      drawerCloseRoute
+      this.props.drawerCloseRoute
     );
     const { [routeKey]: childNavigation } = this.props.childNavigationProps;
     return DrawerScreen.router.getScreenOptions(
