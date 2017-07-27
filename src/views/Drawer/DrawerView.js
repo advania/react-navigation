@@ -94,9 +94,11 @@ export default class DrawerView<T: *> extends PureComponent<void, Props, void> {
   _updateScreenNavigation = (
     navigation: NavigationScreenProp<NavigationState, NavigationAction>
   ) => {
-    const navigationState = navigation.state.routes.find(
-      (route: *) => route.routeName === drawerCloseRoute
-    );
+      const { drawerCloseRoute } = this.props;
+
+      return navigation.state.routes.find(
+        (route: *) => route.routeName === drawerCloseRoute
+      );
     if (
       this._screenNavigationProp &&
       this._screenNavigationProp.state === navigationState
